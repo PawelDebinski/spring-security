@@ -10,4 +10,9 @@ public class DemoController {
     public String showHome() {
         return "home";
     }
+
+    @GetMapping("/showMyLoginPage")
+    public String showMyLoginPage() {
+        return "fancy-login";
+    }
 }
