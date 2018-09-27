@@ -24,6 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     // Konfiguracja -> każdy request do naszej apki musi być autoryzowany, a jak nie jest wyświetla się login page dostępny dla wszystkich
+    // po wylogowaniu, spring wyśle logout parameter który można wykorzystać np do wyświetlenia info że się wylogowałeś
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -32,6 +33,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/showMyLoginPage")
                 .loginProcessingUrl("/authenticateTheUser")
+                .permitAll()
+                .and()
+                .logout()
                 .permitAll();
     }
 }
