@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser(users.username("john").password("test123").roles("EMPLOYEE"))
                 .withUser(users.username("mary").password("test123").roles("EMPLOYEE", "MANAGER"))
                 .withUser(users.username("susan").password("test123").roles("EMPLOYEE", "ADMIN"));
+
     }
 
     // Konfiguracja -> każdy request do naszej apki musi być autoryzowany, a jak nie jest wyświetla się login page dostępny dla wszystkich
